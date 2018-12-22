@@ -1,0 +1,21 @@
+
+package: Fakr-0.1.0.0
+os: linux
+arch: x86_64
+compiler: ghc-8.0.2
+client: cabal-install-1.24.0.2
+dependencies: ListZipper-1.2.0.2 base-4.9.1.0 mtl-2.2.1
+              parsec-3.1.11 transformers-0.5.2.0
+install-outcome: InstallOk
+docs-outcome: NotTried
+tests-outcome: NotTried
+
+package: ListZipper-1.2.0.2
+os: linux
+arch: x86_64
+compiler: ghc-8.0.2
+client: cabal-install-1.24.0.2
+dependencies: QuickCheck-2.9.2 base-4.9.1.0
+install-outcome: InstallOk
+docs-outcome: NotTried
+tests-outcome: NotTried
