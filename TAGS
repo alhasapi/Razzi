@@ -1,0 +1,105 @@
+
+./Setup.hs,15
+main main1,2
+
+./app/Main.hs,37
+module Main Main2,3
+main main8,9
+
+./test/Spec.hs,15
+main main0,1
+
+./src/Fakr.hs,3306
+module Fakr Fakr10,11
+data BFExpr BFExpr33,34
+data BFExpr = Increment Increment33,34
+data BFExpr = Increment | DecrementDecrement33,34
+            | GoForward GoForward34,35
+            | GoForward | GoBackwardGoBackward34,35
+            | Input Input35,36
+            | Input     | OutputOutput35,36
+            | Loop Loop36,37
+data NotDelayed NotDelayed38,39
+data NotDelayed = NotDelayed NotDelayed38,39
+data UserChoice UserChoice40,41
+data UserChoice = QuitQuit40,41
+                | Reset Reset41,42
+                | Reset         | HelpHelp41,42
+                | Inspect Inspect42,43
+                | Inspect       | Verbose Verbose42,43
+                | Mode Mode43,44
+                | SlowedExecution SlowedExecution44,45
+                | Code Code45,46
+                | Code [BFExpr] | Import Import45,46
+data Opt Opt48,49
+data Opt = OptHelp OptHelp48,49
+data Opt = OptHelp | File File48,49
+data Vals Vals51,52
+  Ask Ask52,53
+  Scatter Scatter53,54
+  Load Load57,58
+type BFState BFState61,62
+class FromJSON FromJSON63,64
+  serialize serialize64,65
+class ToJSON ToJSON66,67
+  deserialize deserialize67,68
+symbols symbols70,71
+instructions instructions73,74
+parseIntruction parseIntruction76,77
+parseCode parseCode86,87
+generiqparse generiqparse89,90
+parseVerbose, parseInspect, parseHelp, parseQuit, parseReset, parseImport parseImport93,94
+parseVerbose, parseInspect, parseHelp, parseQuit, parseReset,parseReset93,94
+parseVerbose, parseInspect, parseHelp, parseQuit,parseQuit93,94
+parseVerbose, parseInspect, parseHelp,parseHelp93,94
+parseVerbose, parseInspect,parseInspect93,94
+parseVerbose,parseVerbose93,94
+parseQuit parseQuit94,95
+parseInspect parseInspect95,96
+parseReset parseReset96,97
+parseHelp parseHelp97,98
+parseQIRH parseQIRH99,100
+parseVerbose parseVerbose109,110
+parseMode parseMode119,120
+parseImport parseImport129,130
+parseBFCode, parseSlowerExecution parseSlowerExecution136,137
+parseBFCode,parseBFCode136,137
+parseSlowerExecution parseSlowerExecution137,138
+parseBFCode parseBFCode151,152
+parseUserChoice parseUserChoice152,153
+parseOptHelp parseOptHelp166,167
+parseOptFile parseOptFile169,170
+parseOpt parseOpt176,177
+helloWorld helloWorld181,182
+applyOnCursor' applyOnCursor'183,184
+checkMove checkMove190,191
+runCommands' runCommands'204,205
+runCommand' runCommand'207,208
+applyOnCursor applyOnCursor233,234
+checkMove' checkMove'244,245
+runCommands runCommands259,260
+runCommand runCommand264,265
+fromBS fromBS284,285
+extendMemory extendMemory294,295
+defaulBFState defaulBFState298,299
+class Applicative f => FakeApplicative FakeApplicative302,303
+  fakePure fakePure303,304
+instance Applicative Applicative Wr305,306
+  pure pure306,307
+  _ _307,308
+data Wr Wr309,310
+data Wr a = Wr Wr309,310
+instance FakeApplicative FakeApplicative Wr311,312
+  fakePure fakePure312,313
+help help314,315
+repl repl329,330
+handleOptions handleOptions342,343
+modish modish375,376
+execute execute384,385
+putProgress putProgress393,394
+putStr' putStr'397,398
+slowExec slowExec402,403
+goodBye goodBye409,410
+animate animate412,413
+generateAnimatedWords generateAnimatedWords418,419
+banner banner434,435
