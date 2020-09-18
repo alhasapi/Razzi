@@ -61,10 +61,10 @@ data Vals :: (* -> * -> *) where
 type BFState = Z.Zipper Integer
 
 class FromJSON a where
-  serialize :: (Show b) => String -> b -> a
+  deserialize :: (Show b) => a -> b -> String
 
 class ToJSON a where
-  deserialize :: (Show b) => a -> b -> String
+  serialize :: (Show b) => String -> b -> a
 
 -- Parsing stuff
 symbols :: String
@@ -91,11 +91,12 @@ parseIntruction =
 
 
 parseCode :: String -> Either ParseError [BFExpr]
-parseCode = parse parseIntruction "code.bf"
+parseCode
+  = parse parseIntruction "code.bf"
 
 generiqparse :: String -> UserChoice -> Parser UserChoice
-generiqparse str out =
-   char ':' >> string str >> pure out
+generiqparse str out
+  = char ':' >> string str >> pure out
 
 parseVerbose, parseInspect, parseHelp, parseQuit, parseReset, parseImport :: Parser UserChoice
 parseQuit    = generiqparse "quit"    Quit
@@ -104,7 +105,8 @@ parseReset   = generiqparse "reset"   Reset
 parseHelp    = generiqparse "help"    Help
 
 parseQIRH :: Parser UserChoice
-parseQIRH = foldl1 (<|>) $ map (\q -> try $ uncurry generiqparse (fn q, q)) [Quit, Inspect, Reset, Help]
+parseQIRH
+  = foldl1 (<|>) $ map (\q -> try $ uncurry generiqparse (fn q, q)) [Quit, Inspect, Reset, Help]
   where
     fn = ((\(fs:rst) -> (toLower fs):rst) . show)
 
@@ -285,6 +287,7 @@ fromBS = -- (++ "\n") .
       . rewrite
   where
     rewrite (Z.Zip _ []) = Z.Zip [] []
+    rewrite (Z.Zip [] _) = Z.Zip [] []
     rewrite (Z.Zip u (x:xs))
       = Z.Zip (map show u) (("<" ++ show x ++ ">"):map show xs)
 
@@ -316,7 +319,7 @@ repl initial mode = do
   supply <- getLine
   if "" /= supply then
     case parseUserChoice supply of
-      Left _         ->         putStrLn "Invalid input" >> repl initial mode
+      Left _         -> putStrLn "Invalid input" >> repl initial mode
       Right commands -> handleOptions commands initial mode
   else
     repl initial mode
@@ -384,7 +387,6 @@ putStr' delay value = do
 
 slowExec :: [BFExpr] -> Int -> BFState -> IO BFState
 slowExec code delay context = do
-  putStrLn "Here"
   value <- runWriterT (runStateT (runCommands code) context)
   mapM_ (putStr' delay) (snd value)
   putStrLn ""
@@ -449,6 +451,6 @@ banner = mapM_ putStrLn [
         It is a path which leads ultimately, by applying rewriting rules, to a canonical expression
   * The Effect Fallacy
         FP is still dwelling inside that ethereal realm of platonic ideas where mathematical structures inhabit.
-        Just look at John Backus's Turing-award lecture (Can programming be liberated from the Von-Neumann Style?),
-        Effects are often seen and presented as a hideous, nearly develish.
+        In John Backus's Turing-award lecture (Can programming be liberated from the Von-Neumann Style?),
+        Effects are often seen and presented as a hideous, nearly devilish.
 -}
