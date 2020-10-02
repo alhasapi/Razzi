@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a09286baeeaab8ab2d4e57e0c5d0f9a20c70272d1e4bd9984a4038db95de3de3
+-- hash: f24e67472b6819d717387f52a2dcb8ae7e76294de0e327f1b38761a6f65cd82e
 
 name:           Fakr
 version:        0.1.0.0
@@ -27,8 +27,10 @@ source-repository head
 
 library
   exposed-modules:
+      Cli
       Fakr
       Parser
+      Types
   other-modules:
       Paths_Fakr
   hs-source-dirs:

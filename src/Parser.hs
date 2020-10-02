@@ -1,29 +1,9 @@
 module Parser where
 
+import Types
 import Data.Char
 import Text.ParserCombinators.Parsec
-import qualified Data.List.Zipper as Z
 
-data BFExpr = Increment | Decrement
-            | GoForward | GoBackward
-            | Input     | Output
-            | Loop [BFExpr] deriving (Show, Eq)
-
-data NotDelayed = NotDelayed deriving (Show, Eq)
-
-data UserChoice = Quit
-                | Reset         | Help
-                | Inspect       | Verbose Bool
-                | Mode Bool
-                | SlowedExecution (Either NotDelayed (Int, [BFExpr]))
-                | Code [BFExpr] | Import FilePath
-                deriving (Show, Eq)
-
- 
-data Opt = OptHelp | File FilePath
-
-
-type BFState = Z.Zipper Integer
 
 -- Parsing stuff
 symbols :: String

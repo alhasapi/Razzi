@@ -2,7 +2,9 @@
 
 module Main where
 
-import Fakr
+import Cli
+import Types
+import Parser
 import Control.Monad
 import System.Environment
 
@@ -21,7 +23,7 @@ main = do
         putStrLn "Usage: fakr [--help | --file <file name>]"
       Right (File fname) ->
           (\case
-            (Left err)  -> print err
+            (Left  err)  -> print err
             (Right ast) -> do
               _ <- execute ast (modish True) defaulBFState
               return ()) <$> parseCode
