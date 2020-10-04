@@ -23,9 +23,9 @@ import Control.Monad
 import Control.Monad.Trans.State
 import Control.Monad.Trans.Writer
 
-import Data.Char
-import Parser
 import Types
+import Parser
+import Data.Char
 
 
 helloWorld :: String
@@ -135,7 +135,8 @@ fromBS = -- (++ "\n") .
       . rewrite
   where
     rewrite (Z.Zip _ []) = Z.Zip [] []
-    rewrite (Z.Zip [] _) = Z.Zip [] []
+    rewrite (Z.Zip [] (x:xs))
+      = Z.Zip [] (("<" ++ show x ++ ">"):map show xs)
     rewrite (Z.Zip u (x:xs))
       = Z.Zip (map show u) (("<" ++ show x ++ ">"):map show xs)
 

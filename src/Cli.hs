@@ -23,7 +23,7 @@ help =
           ":reset                    to the initial state of the memory",
           ":import <file>            to execute a code from a file",
           ":mode <normal | slow>     to execute the code slowly or normaly code",
-          ":slow-exec <delay> <code> to execute the code slowly according to the delay \n"
+          ":slow-exec <delay> <code> to execute the code slowly according to the delay\n"
         ]
 repl
   :: Z.Zipper Integer
