@@ -16,17 +16,14 @@ module Fakr (
 ) where
 
 
-import qualified Control.Monad.State as S
-import qualified Data.List.Zipper as Z
-
-import Control.Monad
-import Control.Monad.Trans.State
-import Control.Monad.Trans.Writer
-
 import Types
 import Parser
 import Data.Char
-
+import Control.Monad
+import Control.Monad.Trans.State
+import Control.Monad.Trans.Writer
+import qualified Data.List.Zipper as Z
+import qualified Control.Monad.State as S
 
 helloWorld :: String
 helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>."
@@ -36,7 +33,6 @@ applyOnCursor' func =
   S.modify $ \ss ->
      let value = func (Z.cursor ss) 1
      in Z.insert value $ Z.delete ss
-
 
 checkMove :: S.MonadState BFState m => (BFState -> BFState)
                                     -> Bool
@@ -134,15 +130,18 @@ fromBS = -- (++ "\n") .
       . Z.toList
       . rewrite
   where
-    rewrite (Z.Zip _ []) = Z.Zip [] []
+    rewrite (Z.Zip _ [])
+      = Z.Zip [] []
     rewrite (Z.Zip [] (x:xs))
       = Z.Zip [] (("<" ++ show x ++ ">"):map show xs)
     rewrite (Z.Zip u (x:xs))
       = Z.Zip (map show u) (("<" ++ show x ++ ">"):map show xs)
 
 extendMemory :: Bool -> BFState -> BFState
-extendMemory True  (Z.Zip l r) = Z.Zip l (r ++ replicate 20 0)
-extendMemory False (Z.Zip l r) = Z.Zip (l ++ replicate 20 0) r
+extendMemory True  (Z.Zip l r)
+  = Z.Zip l (r ++ replicate 20 0)
+extendMemory False (Z.Zip l r)
+  = Z.Zip (l ++ replicate 20 0) r
 
 
 {-
