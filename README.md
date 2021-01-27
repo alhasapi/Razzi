@@ -11,14 +11,14 @@ Razzi is an experimental compiler-interpreted for the BrainFck language which co
 
 ### We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
   * Lambda-abstractions:
-         - Is a way to construct higher order functions
-         - multiple arguments are encoded as curried sequence of lambda-abstractions, each sharing its scope with all subsequent
-           inner functions
-         - normally standard operations, like arithmetic ops, numbers, must be encoded as lambda-terms, exceptionally, as these
-           constructs are native to the target language, enforcing lambda calculi's or Churchian rules on them might introduce,
-           irrelevant computational overheads, which is not our aim (for now, at least!). We can consider to wrap them with an
-           interface which will make them, at a language level, indistinguishable to real lambda-terms.
-        -  Closures
+      - Is a way to construct higher order functions
+      - multiple arguments are encoded as curried sequence of lambda-abstractions, each sharing its scope with all subsequent
+        inner functions.
+      - normally standard operations, like arithmetic ops, numbers, must be encoded as lambda-terms, exceptionally, as these
+        constructs are native to the target language, enforcing lambda calculi's or Churchian rules on them might introduce,
+        irrelevant computational overheads, which is not our aim (for now, at least!). We can consider to wrap them with an
+        interface which will make them, at a language level, indistinguishable to real lambda-terms.
+     -  Closures.
   * Variables lookup:
         Internally, variables either for curried functions or single argument functions map to the way they are
         sequentially arranged on the source language. Which means that, for now, the only accepted variables
