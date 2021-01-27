@@ -1,6 +1,6 @@
 # Razzi
 
-Razzi is an experimental compiler-interpreted for the BrainFck language which compiles to an untyped lambda calculus written in Haskell.
+## Razzi is an experimental compiler-interpreted for the BrainFck language which compiles to an untyped lambda calculus written in Haskell.
 
 - Given the fact that BF and the lambda calculus are turing complete
 - every program written in BF can be written in LC. From this follows that 
@@ -9,7 +9,7 @@ Razzi is an experimental compiler-interpreted for the BrainFck language which co
 - Knowing that, there is already a runtime system for BF, what's remaining is
 - is just to map LC Abstract-syntax tree into BF.
 
--- We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
+### We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
   * lambda-abstractions
          - Is a way to construct higher order functions
          - multiple arguments are encoded as curried sequence of lambda-abstractions, each sharing its scope with all subsequent
