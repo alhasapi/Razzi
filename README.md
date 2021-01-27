@@ -1,5 +1,7 @@
 # Razzi
-Razzi is an experimental compiler-interpreted for the BrainFck language which compiles to an untyped lambda calculus written in Haskell.
+
+Razzi is an experimental compiler-interpreted for the Brainfuck language which compiles to an untyped lambda calculus written in Haskell.
+According to wikipedia,_Brainfuck is an esoteric programming language..notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer.. it is fully Turing complete_. and _Lambda calculus (also written as λ-calculus) is a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution. It is a universal model of computation that can be used to simulate any Turing machine_.
 
 ## Goals: 
 - Given the fact that BF and the lambda calculus are turing complete
