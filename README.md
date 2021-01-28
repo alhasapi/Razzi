@@ -4,14 +4,12 @@ Razzi is an experimental compiler-interpreted for the Brainfuck language which c
 According to wikipedia,_Brainfuck is an esoteric programming language..notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer.. it is fully Turing complete_. and _Lambda calculus (also written as λ-calculus) is a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution. It is a universal model of computation that can be used to simulate any Turing machine_.
 
 ## Goals: 
-- Given the fact that BF and the lambda calculus are turing complete
-- every program written in BF can be written in LC. From this follows that 
-- there must be a program which map every LC program into BF and vice-vesa.
+- *_Given the fact that BF and the lambda calculus are turing complete every program written in BF can be written in LC. From this follows that 
+  there must be a program which map every LC program into BF and vice-vesa_*.
 - What's interests us here to the conversion of every LC program into BF.
 - Knowing that, there is already a runtime system for BF, what's remaining is
 - is just to map LC Abstract-syntax tree into BF.
-
-### We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
+- We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
   * Lambda-abstractions:
       - Is a way to construct higher order functions
       - multiple arguments are encoded as curried sequence of lambda-abstractions, each sharing its scope with all subsequent
