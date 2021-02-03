@@ -30,7 +30,7 @@ According to wikipedia,_Brainfuck is an esoteric programming language..notable f
         
         
         
-Note on The Effect Fallacy:
+## Note on The Effect Fallacy:
         FP is still dwelling inside that ethereal realm of platonic ideas where mathematical structures allegedly inhabit.
         In John Backus's Turing-award lecture (Can programming be liberated from the Von Neumann Style?), effects are often seen
         and presented as a hideous, nearly devilish behavior, which later finally finds its way into monads in Haskell. The fallacy resides in the
