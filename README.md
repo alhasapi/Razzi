@@ -6,9 +6,8 @@ According to wikipedia,_Brainfuck is an esoteric programming language..notable f
 ## Goals: 
 - *_Given the fact that BF and the lambda calculus are turing complete every program written in BF can be written in LC. From this follows that 
   there must be a program which map every LC program into BF and vice-vesa_*.
-- What's interests us here to the conversion of every LC program into BF.
-- Knowing that, there is already a runtime system for BF, what's remaining is
-- is just to map LC Abstract-syntax tree into BF.
+- What's interests us here is the conversion of every LC program into BF.
+- Knowing that, there is already a runtime system for BF, what's remaining is just to map LC Abstract-syntax tree into BF.
 - We start by enumerating the basic constructs of LC and we'll try to see how they can be encoded into BF terms:
   * Lambda-abstractions:
       - Is a way to construct higher order functions
@@ -28,9 +27,12 @@ According to wikipedia,_Brainfuck is an esoteric programming language..notable f
         target language, or it produces another lambda expression.
   * Beta-reduction:
         It is a path which leads ultimately, by applying rewriting rules, to a canonical expression
-  * The Effect Fallacy:
+        
+        
+        
+Note on The Effect Fallacy:
         FP is still dwelling inside that ethereal realm of platonic ideas where mathematical structures allegedly inhabit.
         In John Backus's Turing-award lecture (Can programming be liberated from the Von Neumann Style?), effects are often seen
-        and presented as a hideous, nearly devilish behavior, which later finaly finds its way into Monads in Haskell. The fallacy resides in the
-        fact that effect-free functional programs can turn at least into theorem provers, whithout any interaction which the "real word", making them
+        and presented as a hideous, nearly devilish behavior, which later finally finds its way into monads in Haskell. The fallacy resides in the
+        fact that effect-free functional programs can turn at least into theorem provers, which is supposedly a good thing for a language, whithout any interaction which the "real word", making them
         useless.
