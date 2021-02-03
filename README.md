@@ -26,13 +26,10 @@ According to wikipedia,_Brainfuck is an esoteric programming language..notable f
         A lambda-application can yield either a canonical expression which maps directly to some representation into the
         target language, or it produces another lambda expression.
   * Beta-reduction:
-        It is a path which leads ultimately, by applying rewriting rules, to a canonical expression
-        
-        
+        It is a path which leads ultimately, by applying rewriting rules, to a canonical expression      
         
 ## Note on The Effect Fallacy:
-        FP is still dwelling inside that ethereal realm of platonic ideas where mathematical structures allegedly inhabit.
-        In John Backus's Turing-award lecture (Can programming be liberated from the Von Neumann Style?), effects are often seen
-        and presented as a hideous, nearly devilish behavior, which later finally finds its way into monads in Haskell. The fallacy resides in the
-        fact that effect-free functional programs can turn at least into theorem provers, which is supposedly a good thing for a language, whithout any interaction which the "real word", making them
-        useless.
+FP is still dwelling inside that ethereal realm of platonic ideas where mathematical structures allegedly inhabit.
+In John Backus' Turing-award lecture (Can programming be liberated from the Von Neumann Style?), effects are often seen
+and presented as a hideous, nearly devilish behavior, which later finally finds its way into monads in Haskell. The fallacy resides in the
+fact that effect-free functional programs can turn at least into theorem provers, which is supposedly a good thing for a language, whithout any interaction which the "real word", making them useless.
