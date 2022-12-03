@@ -1,10 +1,12 @@
 # Razzi
 
-According to wikipedia, _*Brainfuck* is an esoteric programming language..notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer.. it is fully Turing complete_. and the _*Lambda calculus* (also written as λ-calculus) is a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution. It is a universal model of computation that can be used to simulate any Turing machine_.
-
 Razzi is an experimental compiler-interpreted for the Brainfuck language which compiles to an untyped lambda calculus written in Haskell. It is the perspective of construing both a the "same" thing in different forms mutually
 convertible concepts and programs that makes such an enterprise interesting and worthwhile. Highly similar to the turing-machine description
 we can consider BF as an archetype of imperative programming in the same obvious way that the lambda-calculus, is the archetype of functional programming.
+
+According to wikipedia, _*Brainfuck* is an esoteric programming language..notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer.. it is fully Turing complete_. and the _*Lambda calculus* (also written as λ-calculus) is a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution. It is a universal model of computation that can be used to simulate any Turing machine_.
+
+
 Bridging both world concretely exibits the fact that computability can be encoded in so many ways.
 
 ## Goals: 
